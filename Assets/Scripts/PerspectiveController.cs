@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PerspectiveController : MonoBehaviour
 {
-    public float mouseMoveSpeed = 10;
+    public float mouseMoveSpeed = 25;
     private bool cursorFlag;
 
     // Start is called before the first frame update
@@ -29,6 +29,20 @@ public class PerspectiveController : MonoBehaviour
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
             transform.Translate(new Vector3(-mouseX * mouseMoveSpeed * Time.deltaTime, -mouseY * mouseMoveSpeed * Time.deltaTime, 0));
+        }
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if (Camera.main.fieldOfView < 100)
+            {
+                Camera.main.fieldOfView += 2;
+            }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            if (Camera.main.fieldOfView > 30)
+            {
+                Camera.main.fieldOfView -= 2;
+            }
         }
     }
 
