@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PerspectiveController.cs" />
-    <Compile Include="Assets\Scripts\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\RoleController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
